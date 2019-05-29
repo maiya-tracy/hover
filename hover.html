@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<style>
+			img {
+				height: 200px;
+				width: 200px;
+			}
+			div {
+				height: 200px;
+				width: 200px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+		<img src="boring1.jpg" alt="bored" data-alt-src="surprise.jpg"/>
+		</div>
+		<div>
+		<img src="boring2.jpg" alt="bored" data-alt-src="surprise.jpg"/>			
+		</div>
+		<div>
+		<img src="boring3.jpg" alt="bored" data-alt-src="surprise.jpg"/>			
+		</div>
+		<div>
+		<img src="boring4.jpg" alt="bored" data-alt-src="surprise.jpg"/>			
+		</div>
+		
+		<script>
+			$(document).ready(function(){
+				$('img').hover(function() {
+				  var tmp=$(this).attr('src');
+				  $(this).attr('src', $(this).attr('data-alt-src'));
+				  $(this).attr('data-alt-src', tmp);
+				});
+			} );
+		</script>
+	</body>
+</html>
